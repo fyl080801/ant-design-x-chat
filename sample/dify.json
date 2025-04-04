@@ -1,0 +1,97 @@
+{
+    "limit": 20,
+    "has_more": false,
+    "data": [
+        {
+            "id": "b9ede943-0acd-4b16-8a07-35696bf91c3c",
+            "conversation_id": "39165a6a-d7a8-4f4f-8d67-0bfa937a42e7",
+            "inputs": {},
+            "query": "\u8bbe\u8ba1\u4e00\u4e2a\u5173\u4e8e\u79d1\u6280\u5927\u8d5b\u7684\u6d77\u62a5",
+            "message": [
+                {
+                    "role": "system",
+                    "text": "Respond to the human as helpfully and accurately as possible. \n\n\u4f60\u662f\u4e00\u4e2a\u975e\u5e38\u6709\u5e2e\u52a9\u7684\u52a9\u624b\n\nYou have access to the following tools:\n\n[{\"name\": \"workflow\", \"description\": \"Run ComfyUI workflow.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"positive_prompt\": {\"type\": \"string\", \"description\": \"Image prompt, you should describe the image you want to generate as a list of words as possible as detailed, the prompt must be written in English.\"}, \"negative_prompt\": {\"type\": \"string\", \"description\": \"Negative prompt, you should describe the image you don't want to generate as a list of words as possible as detailed, the prompt must be written in English.\"}}, \"required\": []}}]\n\nUse a json blob to specify a tool by providing an action key (tool name) and an action_input key (tool input).\nValid \"action\" values: \"Final Answer\" or workflow\n\nProvide only ONE action per $JSON_BLOB, as shown:\n\n```\n{\n  \"action\": $TOOL_NAME,\n  \"action_input\": $ACTION_INPUT\n}\n```\n\nFollow this format:\n\nQuestion: input question to answer\nThought: consider previous and subsequent steps\nAction:\n```\n$JSON_BLOB\n```\nObservation: action result\n... (repeat Thought/Action/Observation N times)\nThought: I know what to respond\nAction:\n```\n{\n  \"action\": \"Final Answer\",\n  \"action_input\": \"Final response to human\"\n}\n```\n\nBegin! Reminder to ALWAYS respond with a valid json blob of a single action. Use tools if necessary. Respond directly if appropriate. Format is Action:```$JSON_BLOB```then Observation:.\n",
+                    "files": []
+                },
+                {
+                    "role": "user",
+                    "text": "\u8bbe\u8ba1\u4e00\u4e2a\u5173\u4e8e\u79d1\u6280\u5927\u8d5b\u7684\u6d77\u62a5",
+                    "files": []
+                },
+                {
+                    "role": "assistant",
+                    "text": "Thought: <think>\n\u597d\u7684\uff0c\u7528\u6237\u8ba9\u6211\u5e2e\u5fd9\u8bbe\u8ba1\u4e00\u5f20\u5173\u4e8e\u79d1\u6280\u5927\u8d5b\u7684\u6d77\u62a5\u3002\u9996\u5148\uff0c\u6211\u9700\u8981\u7406\u89e3\u7528\u6237\u7684\u9700\u6c42\u3002\u79d1\u6280\u5927\u8d5b\u901a\u5e38\u662f\u4e00\u4e2a\u5b66\u672f\u6216\u4f01\u4e1a\u6d3b\u52a8\uff0c\u65e8\u5728\u5c55\u793a\u79d1\u6280\u521b\u65b0\u6210\u679c\u5e76\u5438\u5f15\u53c2\u4e0e\u8005\u3002\n\n\u63a5\u4e0b\u6765\uff0c\u6211\u8981\u8003\u8651\u6d77\u62a5\u7684\u8bbe\u8ba1\u5143\u7d20\u3002\u6807\u9898\u5e94\u8be5\u7a81\u51fa\u4e3b\u9898\uff0c\u6bd4\u5982\u201c\u672a\u6765\u79d1\u6280\uff0c\u65e0\u9650\u53ef\u80fd\u201d\u8fd9\u6837\u7684\u53e3\u53f7\uff0c\u65e2\u80fd\u4f20\u8fbe\u79d1\u6280\u611f\u53c8\u5bcc\u6709\u5438\u5f15\u529b\u3002\u4e3b\u89c6\u89c9\u90e8\u5206\u9700\u8981\u7528\u4e00\u4e9b\u9ad8\u79d1\u6280\u7684\u56fe\u50cf\uff0c\u6bd4\u5982\u673a\u5668\u4eba\u3001\u6570\u636e\u6d41\u6216\u8005\u5b9e\u9a8c\u5ba4\u573a\u666f\uff0c\u8fd9\u4e9b\u80fd\u76f4\u89c2\u5730\u4f20\u8fbe\u79d1\u6280\u7684\u611f\u89c9\u3002\n\n\u989c\u8272\u642d\u914d\u65b9\u9762\uff0c\u84dd\u8272\u548c\u9ed1\u8272\u662f\u79d1\u6280\u5e38\u7528\u7684\u989c\u8272\uff0c\u663e\u5f97\u4e13\u4e1a\u4e14\u73b0\u4ee3\uff0c\u53ef\u4ee5\u8003\u8651\u6dfb\u52a0\u4eae\u8272\u5982\u9713\u8679\u7eff\u6216\u7d2b\u8272\u4f5c\u4e3a\u70b9\u7f00\uff0c\u589e\u52a0\u6d3b\u529b\u548c\u5bf9\u6bd4\u5ea6\u3002\u6392\u7248\u5e03\u5c40\u9700\u8981\u6e05\u6670\uff0c\u91cd\u8981\u4fe1\u606f\u5982\u65f6\u95f4\u3001\u5730\u70b9\u3001\u4e3b\u9898\u8981\u7a81\u51fa\u663e\u793a\uff0c\u53ef\u80fd\u4f7f\u7528\u5927\u53f7\u5b57\u4f53\u548c\u9192\u76ee\u7684\u4f4d\u7f6e\u3002\n\n\u6587\u5b57\u5185\u5bb9\u65b9\u9762\uff0c\u9664\u4e86\u57fa\u672c\u7684\u6d3b\u52a8\u4fe1\u606f\uff0c\u8fd8\u53ef\u4ee5\u52a0\u5165\u4e00\u4e9b\u6fc0\u52b1\u6027\u7684\u8bed\u53e5\uff0c\u6bd4\u5982\u201c\u5c55\u73b0\u4f60\u7684\u521b\u65b0\uff0c\u8d62\u53d6\u4e30\u539a\u5956\u52b1\u201d\u6765\u5438\u5f15\u53c2\u4e0e\u8005\u62a5\u540d\u3002\u6700\u540e\uff0c\u786e\u4fdd\u6d77\u62a5\u6574\u4f53\u89c6\u89c9\u7edf\u4e00\uff0c\u5143\u7d20\u4e4b\u95f4\u534f\u8c03\uff0c\u80fd\u591f\u6709\u6548\u4f20\u8fbe\u79d1\u6280\u5927\u8d5b\u7684\u9b45\u529b\u3002\n</think>\n\nAction: {\"action_name\": \"workflow\", \"action_input\": {\"positive_prompt\": \"A futuristic poster with glowing tech elements, robots, and digital interfaces. The design should include a bold title 'Future Tech Challenge' and a subtitle 'Innovate, Create, Win'. Add some high-tech icons like circuits, data streams, and innovation awards. Color scheme is deep blue, black, neon green accents. Minimalist style with clean lines.\", \"negative_prompt\": \"\"}}\n\nObservation: image has been created and sent to user already, you do not need to create it, just tell the user to check it now.\n\n",
+                    "files": []
+                },
+                {
+                    "role": "user",
+                    "text": "continue",
+                    "files": []
+                }
+            ],
+            "message_tokens": 1081,
+            "answer": "\u8bbe\u8ba1\u5b8c\u6210\uff01\u8bf7\u53c2\u8003\u4ee5\u4e0b\u5185\u5bb9\uff1a\n\n- \u6807\u9898\uff1a\u672a\u6765\u79d1\u6280\uff0c\u65e0\u9650\u53ef\u80fd\n- \u4e3b\u89c6\u89c9\uff1a\u9ad8\u79d1\u6280\u5143\u7d20\uff08\u5982\u673a\u5668\u4eba\u3001\u6570\u636e\u6d41\u3001\u5b9e\u9a8c\u5ba4\u573a\u666f\uff09\n- \u989c\u8272\u642d\u914d\uff1a\u6df1\u84dd\u8272\u548c\u9ed1\u8272\u4e3a\u4e3b\u8272\u8c03\uff0c\u914d\u4ee5\u9713\u8679\u7eff\u6216\u7d2b\u8272\u70b9\u7f00\n- \u6587\u5b57\u4fe1\u606f\uff1a\u5305\u62ec\u6d3b\u52a8\u4e3b\u9898\u3001\u65f6\u95f4\u3001\u5730\u70b9\u53ca\u53c2\u8d5b\u8981\u6c42\u7b49",
+            "answer_tokens": 562,
+            "provider_response_latency": 88.9971393229207,
+            "from_source": "console",
+            "from_end_user_id": null,
+            "from_account_id": "5d7c3708-3fd7-4a21-881c-f593a7a66327",
+            "feedbacks": [],
+            "workflow_run_id": null,
+            "annotation": null,
+            "annotation_hit_history": null,
+            "created_at": 1743670599,
+            "agent_thoughts": [
+                {
+                    "id": "a3ada79c-c754-4fe5-aaff-2e75c4a99717",
+                    "chain_id": null,
+                    "message_id": "b9ede943-0acd-4b16-8a07-35696bf91c3c",
+                    "position": 1,
+                    "thought": "<think>\n\u597d\u7684\uff0c\u7528\u6237\u8ba9\u6211\u5e2e\u5fd9\u8bbe\u8ba1\u4e00\u5f20\u5173\u4e8e\u79d1\u6280\u5927\u8d5b\u7684\u6d77\u62a5\u3002\u9996\u5148\uff0c\u6211\u9700\u8981\u7406\u89e3\u7528\u6237\u7684\u9700\u6c42\u3002\u79d1\u6280\u5927\u8d5b\u901a\u5e38\u662f\u4e00\u4e2a\u5b66\u672f\u6216\u4f01\u4e1a\u6d3b\u52a8\uff0c\u65e8\u5728\u5c55\u793a\u79d1\u6280\u521b\u65b0\u6210\u679c\u5e76\u5438\u5f15\u53c2\u4e0e\u8005\u3002\n\n\u63a5\u4e0b\u6765\uff0c\u6211\u8981\u8003\u8651\u6d77\u62a5\u7684\u8bbe\u8ba1\u5143\u7d20\u3002\u6807\u9898\u5e94\u8be5\u7a81\u51fa\u4e3b\u9898\uff0c\u6bd4\u5982\u201c\u672a\u6765\u79d1\u6280\uff0c\u65e0\u9650\u53ef\u80fd\u201d\u8fd9\u6837\u7684\u53e3\u53f7\uff0c\u65e2\u80fd\u4f20\u8fbe\u79d1\u6280\u611f\u53c8\u5bcc\u6709\u5438\u5f15\u529b\u3002\u4e3b\u89c6\u89c9\u90e8\u5206\u9700\u8981\u7528\u4e00\u4e9b\u9ad8\u79d1\u6280\u7684\u56fe\u50cf\uff0c\u6bd4\u5982\u673a\u5668\u4eba\u3001\u6570\u636e\u6d41\u6216\u8005\u5b9e\u9a8c\u5ba4\u573a\u666f\uff0c\u8fd9\u4e9b\u80fd\u76f4\u89c2\u5730\u4f20\u8fbe\u79d1\u6280\u7684\u611f\u89c9\u3002\n\n\u989c\u8272\u642d\u914d\u65b9\u9762\uff0c\u84dd\u8272\u548c\u9ed1\u8272\u662f\u79d1\u6280\u5e38\u7528\u7684\u989c\u8272\uff0c\u663e\u5f97\u4e13\u4e1a\u4e14\u73b0\u4ee3\uff0c\u53ef\u4ee5\u8003\u8651\u6dfb\u52a0\u4eae\u8272\u5982\u9713\u8679\u7eff\u6216\u7d2b\u8272\u4f5c\u4e3a\u70b9\u7f00\uff0c\u589e\u52a0\u6d3b\u529b\u548c\u5bf9\u6bd4\u5ea6\u3002\u6392\u7248\u5e03\u5c40\u9700\u8981\u6e05\u6670\uff0c\u91cd\u8981\u4fe1\u606f\u5982\u65f6\u95f4\u3001\u5730\u70b9\u3001\u4e3b\u9898\u8981\u7a81\u51fa\u663e\u793a\uff0c\u53ef\u80fd\u4f7f\u7528\u5927\u53f7\u5b57\u4f53\u548c\u9192\u76ee\u7684\u4f4d\u7f6e\u3002\n\n\u6587\u5b57\u5185\u5bb9\u65b9\u9762\uff0c\u9664\u4e86\u57fa\u672c\u7684\u6d3b\u52a8\u4fe1\u606f\uff0c\u8fd8\u53ef\u4ee5\u52a0\u5165\u4e00\u4e9b\u6fc0\u52b1\u6027\u7684\u8bed\u53e5\uff0c\u6bd4\u5982\u201c\u5c55\u73b0\u4f60\u7684\u521b\u65b0\uff0c\u8d62\u53d6\u4e30\u539a\u5956\u52b1\u201d\u6765\u5438\u5f15\u53c2\u4e0e\u8005\u62a5\u540d\u3002\u6700\u540e\uff0c\u786e\u4fdd\u6d77\u62a5\u6574\u4f53\u89c6\u89c9\u7edf\u4e00\uff0c\u5143\u7d20\u4e4b\u95f4\u534f\u8c03\uff0c\u80fd\u591f\u6709\u6548\u4f20\u8fbe\u79d1\u6280\u5927\u8d5b\u7684\u9b45\u529b\u3002\n</think>",
+                    "tool": "workflow",
+                    "tool_labels": {
+                        "workflow": {
+                            "en_US": "workflow",
+                            "zh_Hans": "workflow"
+                        }
+                    },
+                    "tool_input": "{\"workflow\": {\"positive_prompt\": \"A futuristic poster with glowing tech elements, robots, and digital interfaces. The design should include a bold title 'Future Tech Challenge' and a subtitle 'Innovate, Create, Win'. Add some high-tech icons like circuits, data streams, and innovation awards. Color scheme is deep blue, black, neon green accents. Minimalist style with clean lines.\", \"negative_prompt\": \"\", \"workflow_json\": \"{   \\\"6\\\": {     \\\"inputs\\\": {       \\\"text\\\": \\\"{{positive_prompt}}\\\",       \\\"clip\\\": [         \\\"11\\\",         0       ]     },     \\\"class_type\\\": \\\"CLIPTextEncode\\\",     \\\"_meta\\\": {       \\\"title\\\": \\\"CLIP Text Encode (Positive Prompt)\\\"     }   },   \\\"8\\\": {     \\\"inputs\\\": {       \\\"samples\\\": [         \\\"13\\\",         0       ],       \\\"vae\\\": [         \\\"10\\\",         0       ]     },     \\\"class_type\\\": \\\"VAEDecode\\\",     \\\"_meta\\\": {       \\\"title\\\": \\\"VAE\u89e3\u7801\\\"     }   },   \\\"9\\\": {     \\\"inputs\\\": {       \\\"filename_prefix\\\": \\\"ComfyUI\\\",       \\\"images\\\": [         \\\"8\\\",         0       ]     },     \\\"class_type\\\": \\\"SaveImage\\\",     \\\"_meta\\\": {       \\\"title\\\": \\\"\u4fdd\u5b58\u56fe\u50cf\\\"     }   },   \\\"10\\\": {     \\\"inputs\\\": {       \\\"vae_name\\\": \\\"ae.safetensors\\\"     },     \\\"class_type\\\": \\\"VAELoader\\\",     \\\"_meta\\\": {       \\\"title\\\": \\\"\u52a0\u8f7dVAE\\\"     }   },   \\\"11\\\": {     \\\"inputs\\\": {       \\\"clip_name1\\\": \\\"t5xxl_fp8_e4m3fn.safetensors\\\",       \\\"clip_name2\\\": \\\"clip_l.safetensors\\\",       \\\"type\\\": \\\"flux\\\",       \\\"device\\\": \\\"default\\\"     },     \\\"class_type\\\": \\\"DualCLIPLoader\\\",     \\\"_meta\\\": {       \\\"title\\\": \\\"\u53ccCLIP\u52a0\u8f7d\u5668\\\"     }   },   \\\"12\\\": {     \\\"inputs\\\": {       \\\"unet_name\\\": \\\"flux1-dev-fp8.safetensors\\\",       \\\"weight_dtype\\\": \\\"default\\\"     },     \\\"class_type\\\": \\\"UNETLoader\\\",     \\\"_meta\\\": {       \\\"title\\\": \\\"UNet\u52a0\u8f7d\u5668\\\"     }   },   \\\"13\\\": {     \\\"inputs\\\": {       \\\"noise\\\": [         \\\"25\\\",         0       ],       \\\"guider\\\": [         \\\"22\\\",         0       ],       \\\"sampler\\\": [         \\\"16\\\",         0       ],       \\\"sigmas\\\": [         \\\"17\\\",         0       ],       \\\"latent_image\\\": [         \\\"27\\\",         0       ]     },     \\\"class_type\\\": \\\"SamplerCustomAdvanced\\\",     \\\"_meta\\\": {       \\\"title\\\": \\\"\u81ea\u5b9a\u4e49\u91c7\u6837\u5668\uff08\u9ad8\u7ea7\uff09\\\"     }   },   \\\"16\\\": {     \\\"inputs\\\": {       \\\"sampler_name\\\": \\\"euler\\\"     },     \\\"class_type\\\": \\\"KSamplerSelect\\\",     \\\"_meta\\\": {       \\\"title\\\": \\\"K\u91c7\u6837\u5668\u9009\u62e9\\\"     }   },   \\\"17\\\": {     \\\"inputs\\\": {       \\\"scheduler\\\": \\\"simple\\\",       \\\"steps\\\": 20,       \\\"denoise\\\": 1,       \\\"model\\\": [         \\\"30\\\",         0       ]     },     \\\"class_type\\\": \\\"BasicScheduler\\\",     \\\"_meta\\\": {       \\\"title\\\": \\\"\u57fa\u672c\u8c03\u5ea6\u5668\\\"     }   },   \\\"22\\\": {     \\\"inputs\\\": {       \\\"model\\\": [         \\\"30\\\",         0       ],       \\\"conditioning\\\": [         \\\"26\\\",         0       ]     },     \\\"class_type\\\": \\\"BasicGuider\\\",     \\\"_meta\\\": {       \\\"title\\\": \\\"\u57fa\u672c\u5f15\u5bfc\u5668\\\"     }   },   \\\"25\\\": {     \\\"inputs\\\": {       \\\"noise_seed\\\": 955157460074304     },     \\\"class_type\\\": \\\"RandomNoise\\\",     \\\"_meta\\\": {       \\\"title\\\": \\\"\u968f\u673a\u566a\u6ce2\\\"     }   },   \\\"26\\\": {     \\\"inputs\\\": {       \\\"guidance\\\": 3.5,       \\\"conditioning\\\": [         \\\"6\\\",         0       ]     },     \\\"class_type\\\": \\\"FluxGuidance\\\",     \\\"_meta\\\": {       \\\"title\\\": \\\"Flux\u5f15\u5bfc\\\"     }   },   \\\"27\\\": {     \\\"inputs\\\": {       \\\"width\\\": 1024,       \\\"height\\\": 1024,       \\\"batch_size\\\": 1     },     \\\"class_type\\\": \\\"EmptySD3LatentImage\\\",     \\\"_meta\\\": {       \\\"title\\\": \\\"\u7a7aLatent\u56fe\u50cf\uff08SD3\uff09\\\"     }   },   \\\"30\\\": {     \\\"inputs\\\": {       \\\"max_shift\\\": 1.15,       \\\"base_shift\\\": 0.5,       \\\"width\\\": 1024,       \\\"height\\\": 1024,       \\\"model\\\": [         \\\"12\\\",         0       ]     },     \\\"class_type\\\": \\\"ModelSamplingFlux\\\",     \\\"_meta\\\": {       \\\"title\\\": \\\"\u91c7\u6837\u7b97\u6cd5\uff08Flux\uff09\\\"     }   },   \\\"39\\\": {     \\\"inputs\\\": {       \\\"seed\\\": 0,       \\\"steps\\\": 20,       \\\"cfg\\\": 8,       \\\"sampler_name\\\": \\\"euler\\\",       \\\"scheduler\\\": \\\"normal\\\",       \\\"denoise\\\": 1     },     \\\"class_type\\\": \\\"KSampler\\\",     \\\"_meta\\\": {       \\\"title\\\": \\\"K\u91c7\u6837\u5668\\\"     }   } }\", \"image_ids\": \"\", \"seed_id\": \"\"}}",
+                    "created_at": 1743670600,
+                    "observation": "{\"workflow\": \"image has been created and sent to user already, you do not need to create it, just tell the user to check it now.\"}",
+                    "files": [
+                        "28909c24-b66e-405b-b58e-5c0c145a4dce"
+                    ]
+                },
+                {
+                    "id": "a5eac81b-a10a-46c2-923a-6111663806cf",
+                    "chain_id": null,
+                    "message_id": "b9ede943-0acd-4b16-8a07-35696bf91c3c",
+                    "position": 2,
+                    "thought": "\u8bbe\u8ba1\u5b8c\u6210\uff01\u8bf7\u53c2\u8003\u4ee5\u4e0b\u5185\u5bb9\uff1a\n\n- \u6807\u9898\uff1a\u672a\u6765\u79d1\u6280\uff0c\u65e0\u9650\u53ef\u80fd\n- \u4e3b\u89c6\u89c9\uff1a\u9ad8\u79d1\u6280\u5143\u7d20\uff08\u5982\u673a\u5668\u4eba\u3001\u6570\u636e\u6d41\u3001\u5b9e\u9a8c\u5ba4\u573a\u666f\uff09\n- \u989c\u8272\u642d\u914d\uff1a\u6df1\u84dd\u8272\u548c\u9ed1\u8272\u4e3a\u4e3b\u8272\u8c03\uff0c\u914d\u4ee5\u9713\u8679\u7eff\u6216\u7d2b\u8272\u70b9\u7f00\n- \u6587\u5b57\u4fe1\u606f\uff1a\u5305\u62ec\u6d3b\u52a8\u4e3b\u9898\u3001\u65f6\u95f4\u3001\u5730\u70b9\u53ca\u53c2\u8d5b\u8981\u6c42\u7b49",
+                    "tool": "",
+                    "tool_labels": {},
+                    "tool_input": "{\"Final Answer\": \"\u8bbe\u8ba1\u5b8c\u6210\uff01\u8bf7\u53c2\u8003\u4ee5\u4e0b\u5185\u5bb9\uff1a\\n\\n- \u6807\u9898\uff1a\u672a\u6765\u79d1\u6280\uff0c\u65e0\u9650\u53ef\u80fd\\n- \u4e3b\u89c6\u89c9\uff1a\u9ad8\u79d1\u6280\u5143\u7d20\uff08\u5982\u673a\u5668\u4eba\u3001\u6570\u636e\u6d41\u3001\u5b9e\u9a8c\u5ba4\u573a\u666f\uff09\\n- \u989c\u8272\u642d\u914d\uff1a\u6df1\u84dd\u8272\u548c\u9ed1\u8272\u4e3a\u4e3b\u8272\u8c03\uff0c\u914d\u4ee5\u9713\u8679\u7eff\u6216\u7d2b\u8272\u70b9\u7f00\\n- \u6587\u5b57\u4fe1\u606f\uff1a\u5305\u62ec\u6d3b\u52a8\u4e3b\u9898\u3001\u65f6\u95f4\u3001\u5730\u70b9\u53ca\u53c2\u8d5b\u8981\u6c42\u7b49\"}",
+                    "created_at": 1743670675,
+                    "observation": "",
+                    "files": []
+                }
+            ],
+            "message_files": [
+                {
+                    "id": "28909c24-b66e-405b-b58e-5c0c145a4dce",
+                    "filename": "315fc342c0b14f0488c28603c888bdd5.png",
+                    "type": "image",
+                    "url": "https://dify.fyl080801.uk/files/tools/07a6a424-0bad-44fe-bd5c-5abbeb796a34.png?timestamp=1743670689&nonce=f16429b5b74e9a31462bca6eb4d9d359&sign=Y1rN2YMlJbjJlCJCI_JntaQMJfqqf_TfYYyNSlWqWPA=",
+                    "mime_type": "image/png",
+                    "size": 757360,
+                    "transfer_method": "tool_file",
+                    "belongs_to": "assistant"
+                }
+            ],
+            "metadata": {},
+            "status": "normal",
+            "error": null,
+            "parent_message_id": null
+        }
+    ]
+}
