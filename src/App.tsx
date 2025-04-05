@@ -31,7 +31,7 @@ function App() {
   return (
     <div className="p-8">
       <nav className="flex justify-center gap-4 mb-8">
-        {links.map(item => <Link to={item.to} className="px-4 py-2 bg-gray-100 rounded hover:bg-gray-200">
+        {links.map((item, index) => <Link key={index} to={item.to} className="px-4 py-2 bg-gray-100 rounded hover:bg-gray-200">
           {item.label}
         </Link>)}
       </nav>
