@@ -1,12 +1,13 @@
 import { useState, useRef, useEffect } from 'react'
 // import OpenAI from 'openai';
 // type ChatCompletionMessageParam = OpenAI.Chat.Completions.ChatCompletionMessageParam;
-import { Sender, Bubble, ThoughtChain, Prompts, PromptsProps } from '@ant-design/x'
+import { Sender, Bubble, ThoughtChain, Prompts } from '@ant-design/x'
 import { CoffeeOutlined, FireOutlined, SmileOutlined, UserOutlined } from '@ant-design/icons'
-import { Flex, GetProp, GetRef, Space, Spin, Typography } from 'antd'
+import { GetProp, GetRef, Space, Spin, Typography } from 'antd'
 import { BubbleDataType } from '@ant-design/x/es/bubble/BubbleList'
 import markdownit from 'markdown-it'
 import firstMd from '../assets/messages/first.md?raw'
+import resultMd from '../assets/messages/result.md?raw'
 
 const md = markdownit({
   html: true,
@@ -16,7 +17,7 @@ export default function Chat() {
   const [messages, setMessages] = useState<Array<BubbleDataType>>([
     {
       role: 'user',
-      content: '请帮我规划一下五一取厦门旅游的行程攻略',
+      content: '请帮我规划一下五一去厦门旅游的行程攻略',
     },
     {
       role: 'assistant',
@@ -44,22 +45,57 @@ export default function Chat() {
     },
     {
       role: 'user',
-      content: '一家三口，4.29号出发，5天行程，预算5000元，推荐一些值得去的景点',
+      content: '4.29号出发，一周行程，预算5000元，推荐一些值得去的景点',
     },
-    // { role: 'user', text: '帮我规划去清明去北京的旅游攻略' },
-    // {
-    //     role: 'assistant',
-    //     contents: [{
-    //         type: 'thought-chain',
-    //         content: [
-    //             { text: '好的，我来帮你规划一下。' },
-    //             { text: '请问你打算去北京几天？' },
-    //             { text: '你对哪些景点感兴趣？' },
-    //             { text: '你希望的预算是多少？' },
-    //         ],
-    //     }],
-    //     text: '<think>好的</think>Hello! How can I help you?'
-    // },
+    {
+      role: 'thought-chain',
+      content: [
+        {
+          title: '规划一个为期一周去厦门的旅行计划',
+          status: 'success',
+        },
+        {
+          title: "搜索 '厦门一周旅行计划'. 找到相关链接",
+          status: 'success',
+        },
+        {
+          title: '尝试打开163.com的链接',
+          status: 'error',
+        },
+        {
+          title: '尝试打开知乎的链接',
+          status: 'success',
+        },
+        {
+          title: '现在在知乎问答页面上有关于一周厦门之旅的答案',
+          status: 'success',
+        },
+      ],
+    },
+    {
+      role: 'assistant',
+      content: resultMd,
+    },
+    {
+      role: 'suggestion',
+      content: [
+        {
+          key: '6',
+          icon: <CoffeeOutlined style={{ color: '#964B00' }} />,
+          description: '帮我预定往返机票',
+        },
+        {
+          key: '7',
+          icon: <SmileOutlined style={{ color: '#FAAD14' }} />,
+          description: '帮我预定酒店',
+        },
+        {
+          key: '8',
+          icon: <FireOutlined style={{ color: '#FF4D4F' }} />,
+          description: '帮我预约相关景点的门票',
+        },
+      ],
+    },
   ])
   const [inputValue, setInputValue] = useState('')
   const messagesEndRef = useRef<HTMLDivElement>(null)
@@ -136,6 +172,17 @@ export default function Chat() {
       avatar: { icon: <UserOutlined />, style: { visibility: 'hidden' } },
       variant: 'borderless',
       messageRender: items => <Prompts wrap items={items as any} />,
+    },
+    'thought-chain': {
+      avatar: { icon: <UserOutlined />, style: { background: '#fde3cf' } },
+      typing: { step: 5, interval: 20 },
+      style: {
+        maxWidth: 600,
+        marginInlineEnd: 44,
+      },
+      messageRender: (content: any) => {
+        return <ThoughtChain items={content} collapsible />
+      },
     },
   }
 
