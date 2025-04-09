@@ -108,7 +108,6 @@ export default function Chat() {
       avatar: { icon: <UserOutlined />, style: { background: '#fde3cf' } },
       typing: { step: 5, interval: 20 },
       style: {
-        maxWidth: 600,
         marginInlineEnd: 44,
       },
       styles: {
@@ -162,7 +161,6 @@ export default function Chat() {
     user: {
       placement: 'end',
       style: {
-        maxWidth: 600,
         marginInlineStart: 44,
       },
       avatar: { icon: <UserOutlined />, style: { background: '#87d068' } },
@@ -177,7 +175,6 @@ export default function Chat() {
       avatar: { icon: <UserOutlined />, style: { background: '#fde3cf' } },
       typing: { step: 5, interval: 20 },
       style: {
-        maxWidth: 600,
         marginInlineEnd: 44,
       },
       messageRender: (content: any) => {
@@ -260,19 +257,17 @@ export default function Chat() {
   }, [messages])
 
   return (
-    <div className='flex items-center justify-center min-h-3/4 bg-gray-100 p-4'>
-      <div className='relative w-full max-w-md h-[800px] bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col'>
-        {/* Chat messages area */}
-        <div className='flex-1 overflow-y-auto p-4 space-y-2'>
-          <Bubble.List ref={listRef} roles={roles} items={messages}></Bubble.List>
-          <div ref={messagesEndRef} />
-        </div>
+    <div className='h-full w-full flex flex-col overflow-hidden'>
+      {/* Chat messages area */}
+      <div className='flex-1 overflow-y-auto p-4 space-y-2'>
+        <Bubble.List ref={listRef} roles={roles} items={messages}></Bubble.List>
+        <div ref={messagesEndRef} />
+      </div>
 
-        {/* Input area fixed at bottom */}
-        <div className='p-3 border-t border-gray-200 bg-white'>
-          <div className='flex space-x-2'>
-            <Sender value={inputValue} onChange={setInputValue} onSubmit={onSendMessage} />
-          </div>
+      {/* Input area fixed at bottom */}
+      <div className='p-3 border-t border-gray-200 bg-white'>
+        <div className='flex space-x-2'>
+          <Sender value={inputValue} onChange={setInputValue} onSubmit={onSendMessage} />
         </div>
       </div>
     </div>

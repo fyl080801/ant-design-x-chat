@@ -1,44 +1,46 @@
-// import { useState } from 'react'
-import { Outlet, Link } from 'react-router-dom'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
+import { Outlet } from 'react-router-dom'
 import './App.css'
 import './index.css'
+import { MobileLayout, DesktopLayout } from './components/Layouts'
+import { SessionProvider } from './hooks'
 
 function App() {
-  // const [count, setCount] = useState(0)
-
   const links = [
     {
       to: '',
-      label: 'Home'
+      label: 'Home',
     },
     {
       to: '/about',
-      label: 'About'
+      label: 'About',
     },
     {
       to: '/welcome',
-      label: 'Welcome'
+      label: 'Welcome',
     },
     {
       to: '/chat',
-      label: 'Chat'
-    }
+      label: 'Chat',
+    },
   ]
 
-
   return (
-    <div className="p-8">
-      <nav className="flex justify-center gap-4 mb-8">
-        {links.map((item, index) => <Link key={index} to={item.to} className="px-4 py-2 bg-gray-100 rounded hover:bg-gray-200">
-          {item.label}
-        </Link>)}
-      </nav>
+    <SessionProvider>
+      <MobileLayout>
+        {/* <nav className="flex justify-center gap-4 mb-8">
+          {links.map((item, index) => (
+            <a key={index} href={item.to} className="px-4 py-2 bg-gray-100 rounded hover:bg-gray-200">
+              {item.label}
+            </a>
+          ))}
+        </nav> */}
+        <Outlet />
+      </MobileLayout>
 
-      <Outlet />
-
-    </div>
+      <DesktopLayout>
+        <Outlet />
+      </DesktopLayout>
+    </SessionProvider>
   )
 }
 
