@@ -31,7 +31,7 @@ const LoginForm = forwardRef<LoginFormRef>(function LoginForm(_, ref) {
   }
 
   return (
-    <Modal open={open} closable={false} footer={null}>
+    <Modal open={open} closable={false} footer={null} centered>
       <Typography.Title level={3} style={{ textAlign: 'center', marginBottom: 24 }}>
         手机验证码登录
       </Typography.Title>
@@ -63,6 +63,7 @@ const LoginForm = forwardRef<LoginFormRef>(function LoginForm(_, ref) {
           <Input
             placeholder='请输入验证码'
             size='large'
+            allowClear
             suffix={
               <Typography.Link
                 disabled={countdown > 0}

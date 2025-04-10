@@ -5,9 +5,11 @@ import { Sender, Bubble, ThoughtChain, Prompts } from '@ant-design/x'
 import { CoffeeOutlined, FireOutlined, SmileOutlined, UserOutlined } from '@ant-design/icons'
 import { GetProp, GetRef, Space, Spin, Typography } from 'antd'
 import { BubbleDataType } from '@ant-design/x/es/bubble/BubbleList'
+import SimpleBarReact from 'simplebar-react'
 import markdownit from 'markdown-it'
 import firstMd from '../assets/messages/first.md?raw'
 import resultMd from '../assets/messages/result.md?raw'
+import 'simplebar-react/dist/simplebar.min.css'
 
 const md = markdownit({
   html: true,
@@ -257,15 +259,17 @@ export default function Chat() {
   }, [messages])
 
   return (
-    <div className='h-full w-full flex flex-col overflow-hidden'>
+    <div className='h-full w-full flex flex-col gap-8 p-4 overflow-hidden'>
       {/* Chat messages area */}
-      <div className='flex-1 overflow-y-auto p-4 space-y-2'>
-        <Bubble.List ref={listRef} roles={roles} items={messages}></Bubble.List>
-        <div ref={messagesEndRef} />
+      <div className='flex-1 overflow-hidden'>
+        <SimpleBarReact className='h-full pt-8'>
+          <Bubble.List ref={listRef} roles={roles} items={messages}></Bubble.List>
+          <div ref={messagesEndRef} />
+        </SimpleBarReact>
       </div>
 
       {/* Input area fixed at bottom */}
-      <div className='p-3 border-t border-gray-200 bg-white'>
+      <div>
         <div className='flex space-x-2'>
           <Sender value={inputValue} onChange={setInputValue} onSubmit={onSendMessage} />
         </div>

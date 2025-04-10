@@ -4,7 +4,7 @@ import { LoginForm } from '../components/Login'
 import type { LoginFormRef } from '../components/Login'
 
 export const SessionProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false)
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(true)
 
   const loginFormRef = useRef<LoginFormRef>(null)
 
